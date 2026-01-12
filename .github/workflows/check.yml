@@ -1,0 +1,30 @@
+#file: .github/workflows/check.yml
+
+name: Kiem tra Deadline BK
+
+on:
+  workflow_dispatch: # Cho phép bạn bấm nút "Run" để chạy thử
+  schedule:
+    # 6h sáng (giờ Việt Nam)
+    - cron: '0 23 * * *'
+
+jobs:
+  check-deadline:
+    runs-on: ubuntu-latest # Dùng máy ảo Linux
+
+    steps:
+      - name: 1. Checkout code
+        uses: actions/checkout@v3 # Tải code từ repo về
+
+      - name: 2. Setup Node.js
+        uses: actions/setup-node@v3 # Cài đặt Node.js
+        with:
+          node-version: '18' # Dùng Node.js bản 18
+
+      - name: 3. Install dependencies
+        run: npm install # Chạy "npm install"
+
+      - name: 4. Run script
+        run: npm start
+        env:
+          DB: ${{ secrets.DB }}

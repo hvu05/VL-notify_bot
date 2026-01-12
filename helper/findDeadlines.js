@@ -18,14 +18,14 @@ const getMmapSubject = (category) => {
 
 const findDeadlines = async (CHAT_ID, PATH_ONLINE_ICS) => {
     // console.log('findDeadlines', BOT_TOKEN, CHAT_ID, PATH_ONLINE_ICS)
-    const BOT_TOKEN = process.env.BOT_TOKEN
+    const BOT_TELE_TOKEN = process.env.BOT_TOKEN
     const GIO_THONG_BAO_TRUOC = 24 * 5
     // Khởi tạo bot
-    if (!BOT_TOKEN) {
+    if (!BOT_TELE_TOKEN) {
         console.error('Vui lòng cung cấp BOT_TOKEN trong file .env')
         process.exit(1)
     }
-    const bot = new TelegramBot(BOT_TOKEN)
+    const bot = new TelegramBot(BOT_TELE_TOKEN)
 
     if (!PATH_ONLINE_ICS || !CHAT_ID) {
         console.error('Vui lòng kiểm tra lại ICAL_URL và CHAT_ID trong file .env')

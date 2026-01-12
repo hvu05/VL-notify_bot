@@ -66,11 +66,11 @@ const findDeadlines = async (CHAT_ID, PATH_ONLINE_ICS) => {
 
         // 4. Gửi thông báo
         if (deadlinesSapToi.length > 0) {
-            console.log(`Phát hiện ${deadlinesSapToi.length} deadline. Đang gửi đến ${USER_NAME}`)
+            console.log(`Phát hiện ${deadlinesSapToi.length} deadline. Đang gửi đến ${CHAT_ID}`)
 
             deadlinesSapToi.sort((a, b) => a.thoiGian - b.thoiGian);
 
-            let message = `🔔 *Nhắc nhở Deadline của ${EscapeMarkdown(USER_NAME)} trong (${GIO_THONG_BAO_TRUOC} giờ tới)!*\n\n`
+            let message = `🔔 *Nhắc nhở Deadline của ${EscapeMarkdown(CHAT_ID)} trong (${GIO_THONG_BAO_TRUOC} giờ tới)!*\n\n`
 
             for (const dl of deadlinesSapToi) {
                 message += `🚨 *${EscapeMarkdown(dl.ten)}*\n`

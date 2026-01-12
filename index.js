@@ -12,7 +12,7 @@ const run = async () => {
     try {
         await connectDB()
         const data_db = await readUserFromDB()
-        console.log('Data: ', data_db)
+        // console.log('Data: ', data_db)
         let count_num_user = 0
         data_db.forEach(user => {
             const { chat_id, ical_url} = user

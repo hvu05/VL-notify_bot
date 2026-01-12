@@ -19,7 +19,7 @@ const BOT_TOKEN = process.env.BOT_TOKEN
 
 const findDeadlines = async (CHAT_ID, PATH_ONLINE_ICS) => {
     // console.log('findDeadlines', BOT_TOKEN, CHAT_ID, PATH_ONLINE_ICS)
-    const GIO_THONG_BAO_TRUOC = 24 * 1
+    const GIO_THONG_BAO_TRUOC = 24 * 5
     // Khởi tạo bot
     if (!BOT_TOKEN) {
         console.error('Vui lòng cung cấp BOT_TOKEN trong file .env')

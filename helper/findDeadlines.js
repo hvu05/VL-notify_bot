@@ -68,13 +68,14 @@ const findDeadlines = async (CHAT_ID, PATH_ONLINE_ICS) => {
         if (deadlinesSapToi.length > 0) {
             console.log(`Phát hiện ${deadlinesSapToi.length} deadline. Đang gửi đến ${CHAT_ID}`)
 
+            // console.log(`Data:`, deadlinesSapToi)
             deadlinesSapToi.sort((a, b) => a.thoiGian - b.thoiGian);
 
-            let message = `🔔 *Nhắc nhở Deadline của ${EscapeMarkdown(CHAT_ID)} trong (${GIO_THONG_BAO_TRUOC} giờ tới)!*\n\n`
+            let message = `🔔 *Nhắc nhở Deadline của ${CHAT_ID} trong (${GIO_THONG_BAO_TRUOC} giờ tới)!*\n\n`
 
             for (const dl of deadlinesSapToi) {
-                message += `🚨 *${EscapeMarkdown(dl.ten)}*\n`
-                message += `   - **Môn:** ${EscapeMarkdown(dl.mon)}\n`
+                message += `🚨 *${EscapeMarkdown(dl.ten || '')}*\n`
+                message += `   - **Môn:** ${EscapeMarkdown(dl.mon || '')}\n`
                 message += `   - **Hạn chót:** ${dl.thoiGian.toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' })}\n\n`
             }
 

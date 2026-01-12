@@ -34,7 +34,7 @@ const findDeadlines = async (CHAT_ID, PATH_ONLINE_ICS) => {
     }
 
     try {
-        console.log(`Bắt đầu quét deadline của ${USER_NAME}`)
+        console.log(`Bắt đầu quét deadline của ${CHAT_ID}`)
 
         // 1. Tải và Phân tích
         const response = await axios.get(PATH_ONLINE_ICS)
@@ -80,7 +80,7 @@ const findDeadlines = async (CHAT_ID, PATH_ONLINE_ICS) => {
 
             // Gửi tin nhắn qua Telegram
             await bot.sendMessage(CHAT_ID, message, { parse_mode: 'Markdown' })
-            console.log(`Đã gửi thông báo thành công đến ${USER_NAME}!`)
+            console.log(`Đã gửi thông báo thành công đến ${CHAT_ID}!`)
 
         } else {
             const msg_congratulations = `Chúc mừng bạn... không có deadline nào trong ${GIO_THONG_BAO_TRUOC} giờ tới!!!`
@@ -89,7 +89,7 @@ const findDeadlines = async (CHAT_ID, PATH_ONLINE_ICS) => {
         console.log('------------------------------')
 
     } catch (error) {
-        console.error(`Đã xảy ra lỗi trong việc gửi tele với user ${USER_NAME}:`, error.message)
+        console.error(`Đã xảy ra lỗi trong việc gửi tele với user ${CHAT_ID}:`, error.message)
         try {
             await bot.sendMessage(CHAT_ID, `🆘 **LỖI SCRIPT** 🆘\nScript quét deadline của bạn đã gặp lỗi: \n\n\`${error.message}\`\n\nHãy kiểm tra lại!`);
         } catch (e) {

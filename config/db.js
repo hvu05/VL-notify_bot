@@ -4,11 +4,11 @@ const mongoose = require('mongoose')
 const connectDB = async () => {
     try {
         await mongoose.connect(process.env.DB, {
-            dbName: 'user'
+            dbName: 'test'
         });
-        console.log('MongoDB connected');
+        console.log('✅ MongoDB connected (read-only app)');
     } catch (err) {
-        console.error('MongoDB connection error:', err.message);
+        console.error('❌ MongoDB error:', err);
         process.exit(1);
     }
 };

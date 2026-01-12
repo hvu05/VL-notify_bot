@@ -18,6 +18,9 @@ const userSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
-
-})
+}, {
+    collection: "users", // ⚠️ tên collection TRONG ATLAS
+    versionKey: false,
+}
+)
 module.exports = mongoose.model('User', userSchema)

@@ -28,3 +28,4 @@ jobs:
         run: npm start
         env:
           DB: ${{ secrets.DB }}
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}

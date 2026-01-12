@@ -15,10 +15,10 @@ const getMmapSubject = (category) => {
     const Subject = mmap.get(ID)
     return Subject || 'Mã môn chưa xác định'
 }
-const BOT_TOKEN = process.env.BOT_TOKEN
 
 const findDeadlines = async (CHAT_ID, PATH_ONLINE_ICS) => {
     // console.log('findDeadlines', BOT_TOKEN, CHAT_ID, PATH_ONLINE_ICS)
+    const BOT_TOKEN = process.env.BOT_TOKEN
     const GIO_THONG_BAO_TRUOC = 24 * 5
     // Khởi tạo bot
     if (!BOT_TOKEN) {
@@ -29,7 +29,7 @@ const findDeadlines = async (CHAT_ID, PATH_ONLINE_ICS) => {
 
     if (!PATH_ONLINE_ICS || !CHAT_ID) {
         console.error('Vui lòng kiểm tra lại ICAL_URL và CHAT_ID trong file .env')
-        if(CHAT_ID) await bot.sendMessage(CHAT_ID, 'Lỗi: Thiếu ICAL_URL hoặc CHAT_ID.')
+        if (CHAT_ID) await bot.sendMessage(CHAT_ID, 'Lỗi: Thiếu ICAL_URL hoặc CHAT_ID.')
         return
     }
 
@@ -98,4 +98,4 @@ const findDeadlines = async (CHAT_ID, PATH_ONLINE_ICS) => {
     }
 }
 
-module.exports = {findDeadlines}
+module.exports = { findDeadlines }

@@ -4,7 +4,7 @@
 
 1. Đăng ký tài khoản telegram (Mobile hoặc PC)
 2. Click đường dẫn [https://t.me/VL_Deadline_bot](https://t.me/VL_Deadline_bot)  để truy cập ChatBot VL_Deadline_bot.
-3. Gửi tin nhắn đầu tiên với `*/start*`. 
+3. Gửi tin nhắn đầu tiên với `/start`. 
 4. Khi ChatBot yêu cầu đường dẫn **calendars trên trang LMS thì:**
     1. Truy cập Lịch ở LMS
     2. Chọn Quản lý theo dõi

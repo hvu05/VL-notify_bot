@@ -1,8 +1,9 @@
 const User = require('../models/user')
 
 const readUserFromDB = async (user) => {
+    
     try{
-        const result = await User.find({})
+        const result = await User.find({isActive: true})
         if(result){
             const simplified = []
 

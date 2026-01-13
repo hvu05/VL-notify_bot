@@ -11,6 +11,7 @@ const {findDeadlines} = require("./helper/findDeadlines");
 const run = async () => {
     try {
         await connectDB()
+        
         const data_db = await readUserFromDB()
         // console.log('Data: ', data_db)
         let count_num_user = 0

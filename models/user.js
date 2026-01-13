@@ -18,6 +18,16 @@ const userSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
+    userName: {
+        type: String,
+        required: false,
+        trim: true,
+        default: null,
+    },
+    isActive: {
+        type: Boolean,
+        default: true
+    }
 }, {
     collection: "users", // ⚠️ tên collection TRONG ATLAS
     versionKey: false,
